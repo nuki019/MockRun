@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:padding="16dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/controlLayout"
+        android:layout_marginBottom="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="点位 1 (纬度, 经度)" />
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <EditText android:id="@+id/etPoint1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="45.737196, 126.627842" />
+                <Button android:id="@+id/btnGetLocation1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="获取当前定位" />
+            </LinearLayout>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="点位 2" android:layout_marginTop="8dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <EditText android:id="@+id/etPoint2" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="45.736316, 126.627853" />
+                <Button android:id="@+id/btnGetLocation2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="获取当前定位" />
+            </LinearLayout>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="点位 3" android:layout_marginTop="8dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <EditText android:id="@+id/etPoint3" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="45.736324, 126.628669" />
+                <Button android:id="@+id/btnGetLocation3" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="获取当前定位" />
+            </LinearLayout>
+
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="点位 4" android:layout_marginTop="8dp"/>
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                <EditText android:id="@+id/etPoint4" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="45.737187, 126.628659" />
+                <Button android:id="@+id/btnGetLocation4" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="获取当前定位" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout
+        android:id="@+id/controlLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="8dp"
+        android:background="#F5F5F5"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/tvSpeedLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="配速调节: 0 m/s (约 ∞ min/km)"
+            android:textColor="#333333" />
+
+        <SeekBar
+            android:id="@+id/speedSeekBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="100"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnTeleport"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="传送至点1"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#1976D2" />
+
+            <TextView
+                android:id="@+id/tvCurrentSpeed"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.8"
+                android:gravity="center"
+                android:text="状态: 停止"
+                android:textColor="#000000"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/btnStartRun"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="开始跑步"
+                android:textColor="#FFFFFF"
+                android:backgroundTint="#388E3C" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
