@@ -35,11 +35,9 @@ class MockLocationProvider(private val context: Context) {
         }
 
         return try {
-            // 若 provider 已存在，先移除
+            // 若 provider 已存在，先移除（不存在时会抛异常，直接忽略）
             try {
-                if (locationManager.getProvider(providerName) != null) {
-                    locationManager.removeTestProvider(providerName)
-                }
+                locationManager.removeTestProvider(providerName)
             } catch (_: Exception) { /* 忽略移除失败 */ }
 
             locationManager.addTestProvider(
